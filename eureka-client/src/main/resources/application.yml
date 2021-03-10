@@ -1,0 +1,17 @@
+spring:
+  application:
+    # 应用的名字
+    name: eureka-client
+server:
+  # Eureka服务提供者端口号
+  port: 8762
+eureka:
+  instance:
+    hostname: localhost
+    # 采用IP注册
+    prefer-ip-address: true
+    # 实例id格式
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
