@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.ky.kevin</groupId>
-    <artifactId>eureka-client</artifactId>
+    <artifactId>eureka-client-article-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-client</name>
-    <description>eureka-client</description>
+    <name>eureka-client-article-service</name>
+    <description>eureka-client-article-service</description>
 
     <properties>
         <java.version>1.8</java.version>

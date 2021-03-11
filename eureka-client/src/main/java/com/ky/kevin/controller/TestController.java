@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2021/3/10 5:30 下午
  */
 @RestController
+@RequestMapping("/test")
 public class TestController {
     @GetMapping("/hello")
     public String hello() {

@@ -3,4 +3,6 @@ This is a Spring Cloud test programme.
 ## Test List
 - Eureka
 ## Finish List
-- none
+- Eureka Server
+- Eureka Client
+- Eureka Cluster
