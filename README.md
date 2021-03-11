@@ -6,3 +6,4 @@ This is a Spring Cloud test programme.
 - Eureka Server
 - Eureka Client
 - Eureka Cluster
+- Eureka Preservation

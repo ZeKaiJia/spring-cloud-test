@@ -1,4 +1,5 @@
 server:
+  # Eureka注册中心端口号
   port: 14002
 eureka:
   client:
