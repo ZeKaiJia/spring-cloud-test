@@ -22,7 +22,7 @@
     </properties>
 
     <dependencies>
-        <!--eureka client-->
+        <!--Eureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
