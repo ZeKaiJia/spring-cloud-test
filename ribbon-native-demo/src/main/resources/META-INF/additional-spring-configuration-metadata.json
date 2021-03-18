@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "ribbon.maxAutoRetries",
-      "type": "java.lang.String",
-      "description": "Description for ribbon.maxAutoRetries."
-  }
-] }

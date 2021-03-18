@@ -34,3 +34,21 @@ ribbon:
   maxAutoRetriesNextServer: 3
   okToRetryOnAllOperations: true
   retryablesStatusCodes: 500,404,502
+# 声明式REST客户端
+feign:
+  # 开启压缩
+  compression:
+    request:
+      enabled: true
+      # 压缩类型
+      mime-types:
+        - text/xml
+        - application/xml
+        - application/json
+      # 最小容量
+      min-request-size: 2048
+    response:
+      enabled: true
+logging:
+  level:
+    com.ky.kevin.feign.UserRemoteClient: DEBUG
