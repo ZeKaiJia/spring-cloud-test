@@ -3,16 +3,17 @@ package com.ky.kevin;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author kevin
  */
-@SpringBootApplication
 @EnableDiscoveryClient
-public class EurekaClientArticleServiceApplication {
+@SpringBootApplication
+public class EurekaClientClusterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientArticleServiceApplication.class, args);
+        SpringApplication.run(EurekaClientClusterApplication.class, args);
     }
 
 }

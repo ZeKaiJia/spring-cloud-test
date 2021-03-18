@@ -9,10 +9,15 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class EurekaClientArticleServiceApplication {
+public class RibbonNativeDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientArticleServiceApplication.class, args);
+        try {
+            System.setProperty("spring.devtools.restart.enabled", "false");
+            SpringApplication.run(RibbonNativeDemoApplication.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

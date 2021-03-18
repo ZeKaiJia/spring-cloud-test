@@ -1,0 +1,36 @@
+spring:
+  application:
+    # 应用的名字
+    name: ribbon-native-demo
+  security:
+    user:
+      name: kevin
+      password: 123456
+server:
+  # Eureka服务提供者端口号
+  port: 8083
+eureka:
+  instance:
+    # 发送心跳的时间
+    lease-renewal-interval-in-seconds: 5
+    # 等待下一个心跳的时间
+    lease-expiration-duration-in-seconds: 5
+    hostname: localhost
+    # 采用IP注册
+    prefer-ip-address: true
+    # 实例id格式
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:14001/eureka/,/
+      http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:14002/eureka/"
+ribbon:
+  eager-load:
+    enabled: true
+    clients: ribbon-native-demo
+  maxAutoRetries: 1
+  maxAutoRetriesNextServer: 3
+  okToRetryOnAllOperations: true
+  retryablesStatusCodes: 500,404,502
