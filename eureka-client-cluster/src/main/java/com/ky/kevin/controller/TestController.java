@@ -3,9 +3,7 @@ package com.ky.kevin.controller;
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: Kevin
@@ -25,7 +23,17 @@ public class TestController {
 
     @GetMapping("/hello")
     public String hello() {
-        System.err.println("TEST1");
+        System.err.println("test cluster");
         return "hello";
+    }
+
+    @GetMapping("/speak")
+    public String speak(@RequestParam("word") String word) {
+        return "I say " + word;
+    }
+
+    @PostMapping("/change")
+    public String change(@RequestParam("info") String info) {
+        return "I edit " + info;
     }
 }

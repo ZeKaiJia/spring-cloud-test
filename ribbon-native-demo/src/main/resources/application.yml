@@ -21,8 +21,10 @@ eureka:
     # 实例id格式
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
   client:
+    # 健康检查
     healthcheck:
       enabled: true
+    # 服务路径
     service-url:
       defaultZone: "http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:14001/eureka/,/
       http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:14002/eureka/"
@@ -38,6 +40,7 @@ ribbon:
 feign:
   # 开启压缩
   compression:
+    # 请求
     request:
       enabled: true
       # 压缩类型
@@ -47,8 +50,21 @@ feign:
         - application/json
       # 最小容量
       min-request-size: 2048
+    # 响应
     response:
       enabled: true
+  # 客户端
+  client:
+    # 配置
+    config:
+      # Eureka服务
+      eureka-client:
+        # 日志显示内容
+        loggerLevel: FULL
+        # 连接超时时间
+        connectTimeout: 5000
+        # 读取超时时间
+        readTimeout: 5000
 logging:
   level:
     com.ky.kevin.feign.UserRemoteClient: DEBUG
